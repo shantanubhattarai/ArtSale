@@ -1,9 +1,10 @@
 import Image from "next/image";
-import {ReactElement} from 'react';
+import { ReactElement } from "react";
+import Card from "../common/card";
 
 export default function Featured(): ReactElement {
   return (
-    <div className="w-full p-4 border border-gray-400 h-[320px] my-[80px]">
+    <Card className="h-[320px] my-[80px]">
       <div className="relative w-full h-full">
         <Image
           src="https://images.unsplash.com/photo-1628359355624-855775b5c9c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
@@ -21,6 +22,6 @@ export default function Featured(): ReactElement {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

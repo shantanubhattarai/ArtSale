@@ -16,3 +16,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--heading-font);
 }
+
+@layer components{
+  .section-title {
+    @apply text-[32px] leading-[48px] mb-[80px];
+  }
+}
