@@ -6,7 +6,7 @@ export default function ContactUs(): ReactElement {
   return (
     <div>
       <h1 className="mb-[40px] text-4xl">Contact Us</h1>
-      <div className="flex flex-col justify-between gap-20 md:flex-row">
+      <div className="flex flex-col justify-between gap-20 lg:flex-row">
         <div className="w-full">
           <form>
             <div className="mt-8">

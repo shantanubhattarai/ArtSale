@@ -8,7 +8,7 @@ export default function Footer(): ReactElement {
   return (
     <div className="p-4">
       <div
-        className={`w-full text-white max-w-[1416px] p-4 mx-auto text-[16px] mt-[48px] border border-red-900 flex justify-between gap-48 bg-red-800 flex-col md:flex-row`}
+        className={`w-full text-white max-w-[1416px] p-4 mx-auto text-[16px] mt-[48px] border border-red-900 flex justify-between gap-4 lg:gap-48 bg-red-800 flex-col lg:flex-row`}
       >
         <div className="w-full">
           <Link href="/">
