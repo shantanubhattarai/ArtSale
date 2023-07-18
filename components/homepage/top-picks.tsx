@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import ShoppingCard from "../common/shoppingcard";
+import ShoppingCard from "../common/shopping-card";
 
 const topPicksData = [
   {
@@ -28,7 +28,7 @@ const topPicksData = [
   },
 ];
 
-export default function Toppicks(): ReactElement {
+export default function TopPicks(): ReactElement {
   return (
     <>
       <h2 className="section-title">Top Picks</h2>

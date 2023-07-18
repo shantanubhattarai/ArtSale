@@ -52,6 +52,7 @@ export default function Product(): ReactElement {
             <span className="mr-4">Quantity:</span>
             <Button
               className="hover:shadow-gray-300"
+              variant="default"
               onClick={() => (counter > 0 ? setCounter(counter - 1) : 0)}
             >
               -
@@ -59,13 +60,17 @@ export default function Product(): ReactElement {
             <span className="px-8 tabular-nums"> {counter} </span>
             <Button
               className="hover:shadow-gray-300"
+              variant="default"
               onClick={() => setCounter(counter + 1)}
             >
               +
             </Button>
           </div>
           <div className="py-8">
-            <Button className="px-24 py-8 text-white bg-red-800">
+            <Button
+              className="px-24 py-8 hover:shadow-red-900"
+              variant="primary"
+            >
               Add to Cart
             </Button>
           </div>

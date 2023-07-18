@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { twMerge } from "tailwind-merge";
 
 type CardProps = {
   children?: ReactElement | ReactElement[];
@@ -7,6 +8,8 @@ type CardProps = {
 
 export default function Card({ children, className }: CardProps) {
   return (
-    <div className={`p-4 border border-gray-400 ${className}`}>{children}</div>
+    <div className={twMerge(`p-4 border border-gray-400 ${className ?? ""}`)}>
+      {children}
+    </div>
   );
 }

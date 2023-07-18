@@ -13,7 +13,7 @@ export default function Featured(): ReactElement {
           style={{ objectPosition: "0px -175px" }}
           fill={true}
         />
-        <div className="absolute inset-0 w-full h-full bg-gradient-to-l from-gray-900 ">
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-l from-gray-900">
           <div className="absolute right-20 bottom-10">
             <h3 className={` text-white font-bold text-[40px]`}>
               Caleb Edwards
