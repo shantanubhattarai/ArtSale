@@ -1,13 +1,14 @@
-import { Syne } from "next/font/google";
-import { ReactElement } from "react";
 import Link from "next/link";
+import { ReactElement } from "react";
+import { Syne } from "next/font/google";
+
 const syne = Syne({ subsets: ["latin"] });
 
 export default function Footer(): ReactElement {
   return (
     <div className="p-4">
       <div
-        className={`w-full text-white max-w-[1416px] p-4 mx-auto text-[16px] mt-[48px] border border-red-900 flex justify-between gap-48 bg-red-800`}
+        className={`w-full text-white max-w-[1416px] p-4 mx-auto text-[16px] mt-[48px] border border-red-900 flex justify-between gap-48 bg-red-800 flex-row md:flex-col`}
       >
         <div className="w-full">
           <Link href="/">
