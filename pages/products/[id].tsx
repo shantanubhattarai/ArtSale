@@ -1,9 +1,11 @@
 import { ReactElement, useState } from "react";
-// import { useRouter } from "next/router";
-import Image from "next/image";
-import Card from "@/components/common/card";
+
 import Button from "@/components/common/button";
+import Card from "@/components/common/card";
 import { IProduct } from "@/types";
+import Image from "next/image";
+
+// import { useRouter } from "next/router";
 
 const data: IProduct = {
   id: "1",
@@ -39,7 +41,7 @@ export default function Product(): ReactElement {
   return (
     <div>
       {/* {console.log(router.query.id)} */}
-      <div className="flex flex-row w-full md:flex-col">
+      <div className="flex flex-col w-full md:flex-row">
         <Card className="h-[750px] w-3/4">
           <div className="relative w-full h-full">
             <Image src={data.imageUrl} alt="Product" fill={true} />

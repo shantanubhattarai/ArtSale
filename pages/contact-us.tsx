@@ -1,12 +1,12 @@
-import { ReactElement } from "react";
-import Card from "@/components/common/card";
 import Button from "@/components/common/button";
+import Card from "@/components/common/card";
+import { ReactElement } from "react";
 
 export default function ContactUs(): ReactElement {
   return (
     <div>
       <h1 className="mb-[40px] text-4xl">Contact Us</h1>
-      <div className="flex flex-row justify-between gap-20 md:flex-col">
+      <div className="flex flex-col justify-between gap-20 md:flex-row">
         <div className="w-full">
           <form>
             <div className="mt-8">
