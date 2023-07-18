@@ -13,7 +13,9 @@ export default function Layout({ children }: LayoutProps): ReactElement {
     <>
       <div className="flex flex-col items-center justify-between h-screen">
         <Navbar />
-        <main className={`${inter.className} p-4 w-full`}>{children}</main>
+        <main className={`${inter.className} p-4 w-full max-w-[1416px]`}>
+          {children}
+        </main>
         <Footer />
       </div>
     </>
