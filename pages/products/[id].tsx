@@ -39,7 +39,7 @@ export default function Product(): ReactElement {
   return (
     <div>
       {/* {console.log(router.query.id)} */}
-      <div className="flex w-full ">
+      <div className="flex flex-row w-full md:flex-col">
         <Card className="h-[750px] w-3/4">
           <div className="relative w-full h-full">
             <Image src={data.imageUrl} alt="Product" fill={true} />

@@ -50,7 +50,7 @@ export default function FeaturedPicks({
   return (
     <>
       <h2 className="section-title">From {featuredAuthor.author.name}</h2>
-      <div className="grid w-full grid-cols-3 gap-4">
+      <div className="grid w-full gap-4 md:grid-cols-1 lg:grid-cols-3">
         {featuredData.map((featured) => {
           return (
             <ShoppingCard

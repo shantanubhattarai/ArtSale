@@ -23,7 +23,7 @@ export default function Featured({ addToShoppingCart }: Props): ReactElement {
           <Image
             src={data.imageUrl}
             alt="Featured Artist"
-            className="object-cover w-full"
+            className="hidden object-cover w-full md:block"
             style={{ objectPosition: "0px -175px" }}
             fill={true}
           />
