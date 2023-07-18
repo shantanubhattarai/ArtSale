@@ -13,8 +13,8 @@ export default function Layout({ children }: LayoutProps): ReactElement {
     <>
       <div className="flex flex-col items-center justify-between h-screen">
         <Navbar />
-        <main className={`${inter.className} w-full max-w-[1416px]`}>
-          {children}
+        <main className={`${inter.className} w-full p-4`}>
+          <div className="max-w-[1416px]">{children}</div>
         </main>
         <Footer />
       </div>
