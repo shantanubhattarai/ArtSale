@@ -3,6 +3,7 @@ import { IProduct, ProductAction, ProductState } from "@/types";
 import { HYDRATE } from "next-redux-wrapper";
 import { RootState } from "../store";
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const initialState: ProductState = {
   products: [],
@@ -21,7 +22,7 @@ export const cartSlice = createSlice({
           if (product.id === alreadyExists.id) {
             return {
               ...product,
-              quantity: product.quantity + 1,
+              quantity: product.quantity + action.payload.quantity,
             };
           } else return product;
         });
@@ -37,6 +38,7 @@ export const cartSlice = createSlice({
         };
         state.products.push(newProduct);
       }
+      toast("Added to cart!");
     },
     removeProduct: (state: ProductState, action: ProductAction) => {
       const updatedProducts: IProduct[] = state.products.filter(

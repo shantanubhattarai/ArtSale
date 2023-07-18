@@ -5,11 +5,13 @@ import {
   selectProducts,
 } from "@/redux/reducers";
 import { useDispatch, useSelector } from "react-redux";
-import Card from "@/components/common/card";
+
 import Button from "@/components/common/button";
-import { IProduct } from "@/types";
+import Card from "@/components/common/card";
 import { Dispatch } from "@reduxjs/toolkit";
+import { IProduct } from "@/types";
 import Image from "next/image";
+
 export default function ShoppingCart(): ReactElement {
   const shoppingCartState = useSelector(selectProducts);
 
@@ -40,6 +42,11 @@ export default function ShoppingCart(): ReactElement {
       <h1 className="text-4xl">Shopping Cart</h1>
       <div className="h-[600px] max-h-full py-4 mb-20">
         <ul>
+          {shoppingCartState.length == 0 ? (
+            <p className="text-center">No items in the cart</p>
+          ) : (
+            ""
+          )}
           {shoppingCartState.map((shoppingCartItem) => {
             return (
               <li
@@ -47,8 +54,8 @@ export default function ShoppingCart(): ReactElement {
                 className="pb-8"
               >
                 <Card>
-                  <div className="flex justify-between">
-                    <div className="flex justify-between">
+                  <div className="flex flex-col justify-between md:flex-row">
+                    <div className="flex flex-col justify-between md:flex-row">
                       <Image
                         src={shoppingCartItem.imageUrl}
                         alt="Shopping List Item"
@@ -57,8 +64,10 @@ export default function ShoppingCart(): ReactElement {
                         className="inline-block"
                       />
                       <div>
-                        <p className="mx-4 text-xl">{shoppingCartItem.name}</p>
-                        <p className="mx-4 text-gray-700 text-md">
+                        <p className="mt-4 text-xl md:mt-0 md:mx-4">
+                          {shoppingCartItem.name}
+                        </p>
+                        <p className="text-gray-700 md:mx-4 text-md">
                           {shoppingCartItem.author.name}
                         </p>
                         <p className="mx-4 text-sm text-gray-500">
@@ -67,7 +76,7 @@ export default function ShoppingCart(): ReactElement {
                       </div>
                     </div>
                     <div>
-                      <p className="py-4 text-lg font-bold text-right">
+                      <p className="py-4 text-lg font-bold md:text-right">
                         Rs. {shoppingCartItem.price * shoppingCartItem.quantity}
                       </p>
                       <Button

@@ -2,8 +2,12 @@ import { ReactElement, useState } from "react";
 
 import Button from "@/components/common/button";
 import Card from "@/components/common/card";
+import { Dispatch } from "@reduxjs/toolkit";
 import { IProduct } from "@/types";
 import Image from "next/image";
+import { addProduct } from "@/redux/reducers";
+import { useCallback } from "react";
+import { useDispatch } from "react-redux";
 
 // import { useRouter } from "next/router";
 
@@ -36,13 +40,21 @@ const reviews = [
 
 export default function Product(): ReactElement {
   // const router = useRouter();
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
+
+  const dispatch: Dispatch<any> = useDispatch();
+  const addToShoppingCart = useCallback(
+    (product: IProduct) => {
+      dispatch(addProduct(product));
+    },
+    [dispatch]
+  );
 
   return (
     <div>
       {/* {console.log(router.query.id)} */}
-      <div className="flex flex-col w-full md:flex-row">
-        <Card className="h-[750px] w-3/4">
+      <div className="flex flex-col w-full lg:flex-row">
+        <Card className="h-[750px] w-full lg:w-3/4">
           <div className="relative w-full h-full">
             <Image src={data.imageUrl} alt="Product" fill={true} />
           </div>
@@ -51,7 +63,9 @@ export default function Product(): ReactElement {
           <p className="text-4xl font-bold">{data.name}</p>
           <p className="py-2 text-sm text-gray-500">{data.author.name}</p>
           <p className="py-4 text-2xl font-bold">Rs. {data.price}</p>
-          <p className="w-1/2 py-8 leading-[24px]">{data.description}</p>
+          <p className="w-full xl:w-1/2 py-8 leading-[24px]">
+            {data.description}
+          </p>
           <div>
             <span className="mr-4">Quantity:</span>
             <Button
@@ -72,8 +86,11 @@ export default function Product(): ReactElement {
           </div>
           <div className="py-8">
             <Button
-              className="px-24 py-8 hover:shadow-red-900"
+              className="py-8 px-28 hover:shadow-red-900"
               variant="primary"
+              onClick={() => {
+                addToShoppingCart(data);
+              }}
             >
               Add to Cart
             </Button>
