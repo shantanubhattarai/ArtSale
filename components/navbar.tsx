@@ -1,11 +1,13 @@
-import { Syne } from "next/font/google";
 import { ReactElement, useEffect, useState } from "react";
+
 import Link from "next/link";
+import { Syne } from "next/font/google";
+
 const syne = Syne({ subsets: ["latin"] });
 
 export default function Navbar(): ReactElement {
   return (
-    <div className={`sticky z-10 p-4 -top-[56px] w-full`}>
+    <div className={`p-4 w-full`}>
       <div
         className={`w-full max-w-[1416px] bg-[#fff3e4] p-4 mx-auto text-[16px] mt-[48px] border border-gray-400 flex justify-between items-center`}
       >
