@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
 
 type CardProps = {
-  children?: ReactElement | ReactElement[];
+  children?: ReactElement | ReactElement[] | string;
   className?: string;
 };
 

@@ -27,7 +27,7 @@ export default function ShoppingCard({ data }: Props): ReactElement {
           <p className="text-sm text-gray-700">Rs. {data.price}</p>
         </div>
         <div>
-          <Button className="hover:shadow-gray-300" variant="default">
+          <Button variant="default">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="icon icon-tabler icon-tabler-shopping-cart-plus"

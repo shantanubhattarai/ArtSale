@@ -1,5 +1,6 @@
-import Navbar from "./navbar";
+import Footer from "./footer";
 import { Inter } from "next/font/google";
+import Navbar from "./navbar";
 import { ReactElement } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -10,8 +11,11 @@ type LayoutProps = {
 export default function Layout({ children }: LayoutProps): ReactElement {
   return (
     <>
-      <Navbar />
-      <main className={`${inter.className} p-4`}>{children}</main>
+      <div className="flex flex-col items-center justify-between h-screen">
+        <Navbar />
+        <main className={`${inter.className} p-4 w-full`}>{children}</main>
+        <Footer />
+      </div>
     </>
   );
 }

@@ -1,5 +1,12 @@
 import { ReactElement } from "react";
-import ShoppingCard from "../common/shopping-card";
+import ShoppingCard from "../../common/shopping-card";
+
+type Props = {
+  featuredAuthor: {
+    id: number;
+    author: { name: string };
+  };
+};
 
 const topPicksData = [
   {
@@ -28,10 +35,10 @@ const topPicksData = [
   },
 ];
 
-export default function TopPicks(): ReactElement {
+export default function FeaturedPicks({ featuredAuthor }: Props): ReactElement {
   return (
     <>
-      <h2 className="section-title">Top Picks</h2>
+      <h2 className="section-title">From {featuredAuthor.author.name}</h2>
       <div className="grid w-full grid-cols-3 gap-4">
         {topPicksData.map((topPick) => {
           return <ShoppingCard data={topPick} key={`topPick-${topPick.id}`} />;

@@ -6,6 +6,7 @@ type Props = {
   className?: string;
   onClick?: () => void;
   variant: string;
+  type: "button" | "submit" | "reset" | undefined;
 };
 
 interface Variant {
@@ -13,8 +14,8 @@ interface Variant {
 }
 
 const variants: Variant = {
-  default: "bg-white",
-  primary: "bg-red-800 text-white border-red-900",
+  default: "bg-white hover:shadow-grey-300 border-gray-200",
+  primary: "bg-red-800 text-white border-red-900 hover:shadow-red-900",
 };
 
 export default function Button({
@@ -22,15 +23,17 @@ export default function Button({
   className,
   onClick,
   variant,
+  type,
 }: Props) {
   return (
     <button
       className={twMerge(
         `${
           variants[variant] ?? "bg-white"
-        } px-8 py-2 border rounded border-1 hover:shadow-sm ${className ?? ""}`
+        } px-8 py-2 border rounded  hover:shadow-sm ${className ?? ""}`
       )}
       onClick={onClick}
+      type={type ?? "button"}
     >
       {children}
     </button>
