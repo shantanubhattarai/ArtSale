@@ -3,18 +3,23 @@ import Image from "next/image";
 import Button from "./button";
 import { ReactElement } from "react";
 import Link from "next/link";
+import { IProduct } from "@/types";
 
 type Props = {
-  data: { id: string; name: string; price: number; imageUrl: string };
+  product: IProduct;
+  addToShoppingCart: (product: IProduct) => void;
 };
 
-export default function ShoppingCard({ data }: Props): ReactElement {
-  return (
+export default function ShoppingCard({
+  product,
+  addToShoppingCart,
+}: Props): ReactElement {
+  return product ? (
     <Card>
-      <Link href={`/products/${data.id}`}>
+      <Link href={`/products/${product.id}`}>
         <div className="relative w-full h-[365px]">
           <Image
-            src={data.imageUrl}
+            src={product.imageUrl}
             alt="Top Art"
             fill={true}
             className="object-cover"
@@ -23,11 +28,11 @@ export default function ShoppingCard({ data }: Props): ReactElement {
       </Link>
       <div className="flex items-center justify-between py-4">
         <div>
-          <p className="font-medium">{data.name}</p>
-          <p className="text-sm text-gray-700">Rs. {data.price}</p>
+          <p className="font-medium">{product.name}</p>
+          <p className="text-sm text-gray-700">Rs. {product.price}</p>
         </div>
         <div>
-          <Button variant="default">
+          <Button variant="default" onClick={() => addToShoppingCart(product)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="icon icon-tabler icon-tabler-shopping-cart-plus"
@@ -51,5 +56,7 @@ export default function ShoppingCard({ data }: Props): ReactElement {
         </div>
       </div>
     </Card>
+  ) : (
+    <>Loading...</>
   );
 }

@@ -6,7 +6,7 @@ type Props = {
   className?: string;
   onClick?: () => void;
   variant: string;
-  type: "button" | "submit" | "reset" | undefined;
+  type?: "button" | "submit" | "reset" | undefined;
 };
 
 interface Variant {

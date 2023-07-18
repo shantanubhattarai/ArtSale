@@ -2,6 +2,7 @@ import Card from "../../common/card";
 import Image from "next/image";
 import { ReactElement } from "react";
 import FeaturedPicks from "./featured-picks";
+import { IProduct } from "@/types";
 const data = {
   id: 1,
   imageUrl:
@@ -11,8 +12,10 @@ const data = {
     address: "San Francisco",
   },
 };
-
-export default function Featured(): ReactElement {
+type Props = {
+  addToShoppingCart: (product: IProduct) => void;
+};
+export default function Featured({ addToShoppingCart }: Props): ReactElement {
   return (
     <>
       <Card className="h-[320px] my-[80px]">
@@ -34,7 +37,10 @@ export default function Featured(): ReactElement {
           </div>
         </div>
       </Card>
-      <FeaturedPicks featuredAuthor={data} />
+      <FeaturedPicks
+        featuredAuthor={data}
+        addToShoppingCart={addToShoppingCart}
+      />
     </>
   );
 }

@@ -3,16 +3,18 @@ import { ReactElement, useState } from "react";
 import Image from "next/image";
 import Card from "@/components/common/card";
 import Button from "@/components/common/button";
+import { IProduct } from "@/types";
 
-const data = {
-  id: 1,
+const data: IProduct = {
+  id: "1",
   name: "Artpiece 1",
-  price: "45000",
+  price: 45000,
   imageUrl:
     "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=890&q=80",
-  author: "Author 1",
+  author: { name: "Author 1" },
   description:
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum animi, adipisci beatae deserunt consequuntur tenetur dolorum officiis magni quae optio, quasi totam natus et error eveniet omnis libero, repellendus recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum animi, adipisci beatae deserunt",
+  quantity: 1,
 };
 
 const reviews = [
@@ -45,7 +47,7 @@ export default function Product(): ReactElement {
         </Card>
         <div className="w-full p-4">
           <p className="text-4xl font-bold">{data.name}</p>
-          <p className="py-2 text-sm text-gray-500">{data.author}</p>
+          <p className="py-2 text-sm text-gray-500">{data.author.name}</p>
           <p className="py-4 text-2xl font-bold">Rs. {data.price}</p>
           <p className="w-1/2 py-8 leading-[24px]">{data.description}</p>
           <div>
@@ -53,7 +55,7 @@ export default function Product(): ReactElement {
             <Button
               className="hover:shadow-gray-300"
               variant="default"
-              onClick={() => (counter > 0 ? setCounter(counter - 1) : 0)}
+              onClick={() => (counter > 1 ? setCounter(counter - 1) : 1)}
             >
               -
             </Button>
