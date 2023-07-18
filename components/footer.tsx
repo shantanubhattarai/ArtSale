@@ -24,7 +24,7 @@ export default function Footer(): ReactElement {
           </p>
         </div>
         <div className="w-full">
-          <ul className="mt-[48px]">
+          <ul className="mt-[16px] lg:mt-[48px]">
             <li className="py-1">
               <Link href="/contact-us">Contact Us</Link>
             </li>
@@ -34,7 +34,7 @@ export default function Footer(): ReactElement {
           </ul>
         </div>
         <div className="w-full">
-          <ul className="mt-[48px]">
+          <ul className="mt-[16px] lg:mt-[48px]">
             <li className="py-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
